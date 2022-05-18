@@ -35,10 +35,10 @@ SSG <- function(ts1,             # time series
   cat_num2[ts2] -> seq_num2
 
   jitter(x = seq_num1,
-         factor = 2,
+         factor = 1.5,
          amount = NULL) -> jt1
   jitter(seq_num2,
-         factor = 2,
+         factor = 1.5,
          amount = NULL) -> jt2
 
   if(is.null(times) == TRUE) {
