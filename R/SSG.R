@@ -84,7 +84,6 @@ SSG <- function(ts1,             # time series
           col = alpha("blue", 0.60),
           lwd = 0.7)
   }
-
   return(NULL)
 }
 
