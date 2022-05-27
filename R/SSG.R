@@ -8,12 +8,17 @@
 #' @examples
 #' SSG(ts)
 #'
-SSG <- function(ts1,             # time series
+SSG <- function(ts1,              # time series
                  ts2,             # time series 2
                  times = NULL,    # ts times - not yet implemented
                  cats1 = NULL,
                  cats2 = NULL) {  # category vector
   require("scales")
+
+  if(length(unique(ts1)) > 10 | length(unique(ts2)) > 10) {
+    cat("More than 10 unique codes; cannot be plotted.\n Are data continuous?\n")
+    return(NULL)
+  }
 
   if(is.null(cats1) == TRUE) {          # Set up the axes labels
     1:length(unique(ts1)) -> cat_num1
