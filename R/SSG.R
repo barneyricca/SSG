@@ -16,7 +16,7 @@ SSG <- function(ts1,              # time series
   require("scales")
 
   if(length(unique(ts1)) > 10 | length(unique(ts2)) > 10) {
-    cat("More than 10 unique codes; cannot be plotted.\n Are data continuous?\n")
+    cat("More than 10 unique codes; cannot be plotted.\nAre data continuous?\n")
     return(NULL)
   }
 
@@ -36,8 +36,10 @@ SSG <- function(ts1,              # time series
     cats2 -> names(cat_num2)
   }
 
-  cat_num1[ts1] -> seq_num1
-  cat_num2[ts2] -> seq_num2
+  cat_num1[ts1] ->
+    seq_num1
+  cat_num2[ts2] ->
+    seq_num2
 
   jitter(x = seq_num1,
          factor = 1.5,
@@ -51,9 +53,11 @@ SSG <- function(ts1,              # time series
   }
   if(is.null(times) == FALSE) {
       diff(times) -> pt_sizes
-    sqrt(pt_sizes * 4 / max(pt_sizes)) -> pt_sizes
-    if(length(pt_sizes) == (length(jt1) - 1)) {
-      c(pt_sizes, 0.1) -> pt_sizes               # Placeholder for the last time
+    sqrt(pt_sizes * 4 / max(pt_sizes)) ->
+      pt_sizes
+    if(length(pt_sizes) ==
+       (length(jt1) - 1)) {
+      c(pt_sizes, 0.1) -> pt_sizes            # Placeholder for the last time
     }
   }
   {
